@@ -20,15 +20,17 @@ func main() {
 
 	mArgs, srcDir, dstDir := buildArgs(os.Args[1:])
 
-	var args = []string{"run", "-rm"}
-	args = append(args, "-v", strings.Join([]string{srcDir, containerInDir}, ":"))
+	var args = []string{"run", "--rm"}
 
-	//most likely
-	if srcDir == dstDir {
-		args = append(args, "-v", strings.Join([]string{dstDir, containerOutDir}, ":"))
-	} else {
-		if dstDir != "" {
+	if srcDir != "" {
+		args = append(args, "-v", strings.Join([]string{srcDir, containerInDir}, ":"))
+		//most likely
+		if srcDir == dstDir {
 			args = append(args, "-v", strings.Join([]string{dstDir, containerOutDir}, ":"))
+		} else {
+			if dstDir != "" {
+				args = append(args, "-v", strings.Join([]string{dstDir, containerOutDir}, ":"))
+			}
 		}
 	}
 
