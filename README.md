@@ -1,5 +1,5 @@
 # wasm-opt
-wasm optimizer as docker container (11MB image)
+wasm optimizer as docker container (7.96MB image)
 
 # motivation 
 currently https://github.com/WebAssembly/binaryen doesn't provide windows binaries.
