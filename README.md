@@ -7,6 +7,7 @@ this is a `cross platform`(kinda) version of wasm-opt.
 
 # requirements
  * docker
+ * go
 
 # install
 ```sh
