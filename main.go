@@ -20,7 +20,7 @@ func main() {
 
 	mArgs, srcDir, dstDir := buildArgs(os.Args[1:])
 
-	var args = []string{"run"}
+	var args = []string{"run", "-rm"}
 	args = append(args, "-v", strings.Join([]string{srcDir, containerInDir}, ":"))
 
 	//most likely
