@@ -49,7 +49,7 @@ func main() {
 
 }
 
-func buildArgs(args []string) (mArgs []string, srcdir, outdir string) {
+func buildArgs(args []string) (mArgs []string, srcDir, dstDir string) {
 	for i := 0; i < len(args); i++ {
 		if isFlag(args[i]) {
 			if isOutput(args[i]) {
@@ -61,14 +61,14 @@ func buildArgs(args []string) (mArgs []string, srcdir, outdir string) {
 				}
 				output := args[i+1]
 				//get ouput path dir
-				outdir = filepath.Dir(AbsPath(output))
+				dstDir = filepath.Dir(AbsPath(output))
 				mArgs = append(mArgs, path.Join(containerOutDir, filepath.Base(args[i+1])))
 				i++
 			} else {
 				mArgs = append(mArgs, args[i])
 			}
 		} else { //input file
-			srcdir = filepath.Dir(AbsPath(args[i]))
+			srcDir = filepath.Dir(AbsPath(args[i]))
 			mArgs = append(mArgs, path.Join(containerInDir, filepath.Base(args[i])))
 		}
 	}
