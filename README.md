@@ -3,7 +3,7 @@ wasm optimizer as docker container (11MB image)
 
 # motivation 
 currently https://github.com/WebAssembly/binaryen doesn't provide windows binaries.
-this is a `cross platform` version of wasm-opt.
+this is a `cross platform`(kinda) version of wasm-opt.
 
 # requirements
  * docker
