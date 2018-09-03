@@ -14,6 +14,10 @@ this is a `cross platform`(kinda) version of wasm-opt.
 go get -u github.com/gonowa/wasm-opt
 ```
 
+# known issues
+bugs should be reported at https://github.com/WebAssembly/binaryen/issues, afterall this is just a thin wrapper arroung wasm-opt
+ * sometimes the container abnormaly exit with erros such core dump or segmentation fault ( try to run with -d option)
+
 # usage 
 
 ```
