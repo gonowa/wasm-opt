@@ -38,7 +38,7 @@ func main() {
 	args = append(args, mArgs...)
 	cmd := exec.Command("docker", args...)
 	if Debug(args) {
-		fmt.Fprintf(os.Stdout, "runing - docker %s\n", strings.Join(cmd.Args, " "))
+		fmt.Fprintf(os.Stdout, "runing - %s\n", strings.Join(cmd.Args, " "))
 	}
 
 	cmd.Stdout = os.Stdout
